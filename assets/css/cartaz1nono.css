@@ -1,0 +1,52 @@
+#corpoTabela {
+    max-width: 1126.75px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+tr {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 232.44px;
+    width: 335.25px ;    
+    max-height: 600.32px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px 3px 0;
+}
+
+.NomeProd {
+    font-size: 25px;
+}
+
+.anterior {
+    font-size: 20px;
+    text-decoration: line-through;
+}
+
+.alterado {
+    font-size: 40px;
+    
+}
+
+@media print {
+    /* Define o tamanho da folha e a margem */
+    @page {
+        size: A4;
+        margin: 0.9cm;
+    }
+
+    /* Define a orientação da página como paisagem */
+    @page {
+        size: A4 landscape;
+    }
+
+    /* Estilo para dividir o conteúdo em duas páginas, se necessário */
+    .pagina {
+        page-break-before: always;
+    }
+}
+
+

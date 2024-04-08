@@ -1,0 +1,91 @@
+*{
+	font-family: 'Times New Roman', Times, serif';
+}
+
+#menu {
+	background: #0099CC;
+	background: linear-gradient(to bottom,  #CC825D,  #5A352E);
+	height: 42px;
+	border-radius: 12px;
+}
+#menu ul, #menu li {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none
+}
+#menu ul {
+	width: 100%;
+	text-align: center;
+}
+#menu li {
+	display: inline-block;
+	position: relative;
+    text-transform: uppercase;
+}
+#menu a {
+	display: block;
+	line-height: 42px;
+	padding: 0 14px;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size: 13px;
+}
+
+#menu li a:hover {
+	color: #0099CC;
+	background: #F2F2F2;
+}
+
+tbody tr:first-child {
+    display: none;
+}
+
+td {
+    padding: 2px;
+}
+
+p {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.preco {
+    color: red;
+}
+
+.anterior {
+    text-decoration: line-through;
+}
+
+
+@media screen and (max-width: 800px){
+	#menu {position:relative}
+	#menu ul {background:#444444;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none;text-align:left;}
+	#menu li {display:block;float:none;width:auto;}
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media print {
+
+    /* Esconder o input de arquivo e o botão de impressão */
+    #arquivo-input,
+    #btn-imprimir, header {
+        display: none;
+    }
+
+    .linha-com-margem {
+        margin-bottom: 10rem; 
+    }
+
+
+
+}

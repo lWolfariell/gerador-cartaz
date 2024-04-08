@@ -1,0 +1,32 @@
+h1, h2, h3, strong {
+    font-weight: 600;
+    
+}
+
+h1{ 
+    font-size: 40px;
+    text-decoration: underline;
+    line-height: 60px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+}
+
+h4 {
+    font-weight: 500;
+    font-style: italic;
+}
+
+ol {
+    list-style: decimal;
+    font-size: 20px;
+}
+
+li {
+    line-height: 30px;
+}
+
