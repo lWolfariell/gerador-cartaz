@@ -36,12 +36,17 @@
 	background: #F2F2F2;
 }
 
-tbody tr:first-child {
+#corpoTabela li:first-child {
     display: none;
 }
 
-td {
-    padding: 2px;
+#corpoTabela li {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;	
+    align-items: center;
+    justify-content: center;
 }
 
 p {
@@ -81,11 +86,6 @@ body {
     #btn-imprimir, header {
         display: none;
     }
-
-    .linha-com-margem {
-        margin-bottom: 10rem; 
-    }
-
 
 
 }

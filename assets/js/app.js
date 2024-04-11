@@ -52,41 +52,57 @@ $(document).ready(function () {
     // Função para renderizar a tabela HTML
     function renderizarTabela(produtos) {
 
-        const tabela = $('#tabela-produtos tbody');
-
+        const tabela = $('#corpoTabela');
+    
         tabela.empty();
-
+    
         produtos.forEach((produto, index) => {
-
-            const tr = $('<tr></tr>');
-
-            tr.append(`<td><p class="NomeProd">${produto.nome}</p></td>`);
-
+    
+            const li = $('<li></li>');
+    
+            // Cria uma string para todos os elementos <p> dentro do <li>
+            let liContent = `<p class="NomeProd">${produto.nome}</p>`;
+    
             if (parseFloat(produto.precoAnterior) > parseFloat(produto.precoAlterado)) {
-
-                tr.append(`<td><p class="preco anterior"> De R$ ${parseFloat(produto.precoAnterior).toFixed(2)}</p></td>`); // Preço anterior
-                tr.append(`<td><p class="preco alterado">Por ${parseFloat(produto.precoAlterado).toFixed(2)}</p></td>`)
-
+                liContent += `<p class="preco anterior"> De R$ ${parseFloat(produto.precoAnterior).toFixed(2)}</p>`;
+                liContent += `<p class="preco alterado">Por ${parseFloat(produto.precoAlterado).toFixed(2)}</p>`;
             } else {
-
-                tr.append(`<td><p class="preco alterado">R$ ${parseFloat(produto.precoAlterado).toFixed(2)}</p></td>`); // Preço atual
-                tr.append(`<td><p class="preco unidade">Preço ${produto.unidade} R$ ${produto.fatorEtq2}</p></td>`);
-                
+                liContent += `<p class="preco alterado">R$ ${parseFloat(produto.precoAlterado).toFixed(2)}</p>`;
+                liContent += `<p class="preco unidade">Preço ${produto.unidade} R$ ${produto.fatorEtq2}</p>`;
             }
-            
+    
+            // Adiciona a string com os elementos <p> ao <li>
+            li.append(liContent);
+    
+            tabela.append(li);
+    
+            // Adiciona a classe 'fim-da-pagina' ao nono <li>, a partir do segundo
+            const itemsPerPage = 9;
+            if (index >= 1 && (index + 1) % itemsPerPage === 1) {
+                li.addClass('fim-da-pagina');
+            }
 
-            tabela.append(tr);
+            // Adiciona a classe 'paginaPeq' ao 14º <li>, a partir do segundo
+            const itemsPorPag = 14;
+            if (index >= 1 && (index + 1) % itemsPorPag === 1) {
+                li.addClass('.paginaPeq');
+            }
 
+
+    
         });
     }
+    
 
 
-        // Evento de carregamento do arquivo
-        $('#arquivo-input').on('change', function (e) {
-            const file = e.target.files[0];
-            lerArquivoXLSX(file);
-        });
+
+
+    // Evento de carregamento do arquivo
+    $('#arquivo-input').on('change', function (e) {
+        const file = e.target.files[0];
+        lerArquivoXLSX(file);
     });
+});
 
 document.getElementById('btn-imprimir').addEventListener('click', function () {
     window.print();

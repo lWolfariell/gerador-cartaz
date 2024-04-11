@@ -1,20 +1,16 @@
 #corpoTabela {
-    max-width: 550px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 
-tr {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+#corpoTabela li {
     height: 143.62px;
     width: 268.35px;
-    max-width: 536.7px;
     align-items: center;
     justify-content: center;
-    margin: 0 4px 4px 0;
 }
 
 .NomeProd {
@@ -30,14 +26,16 @@ tr {
 }
 
 @media print {
+
     /* Define o tamanho da folha e a margem */
     @page {
         size: A4;
-        margin: 0.9cm;
+        margin: 0;
+
     }
 
     /* Estilo para dividir o conteúdo em duas páginas, se necessário */
-    .pagina {
+    .paginaPeq {
         page-break-before: always;
     }
 }

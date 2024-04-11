@@ -1,20 +1,15 @@
 #corpoTabela {
-    max-width: 1126.75px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 
-tr {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    height: 232.44px;
-    width: 335.25px ;    
-    max-height: 600.32px;
-    align-items: center;
-    justify-content: center;
-    margin: 0 4px 3px 0;
+#corpoTabela li {
+    height: 222.44px;
+    width: 345.25px;
+    max-width: 345.25px;
 }
 
 .NomeProd {
@@ -23,19 +18,19 @@ tr {
 
 .anterior {
     font-size: 20px;
-    text-decoration: line-through;
 }
 
 .alterado {
     font-size: 40px;
-    
+
 }
 
 @media print {
+
     /* Define o tamanho da folha e a margem */
     @page {
         size: A4;
-        margin: 0.9cm;
+        margin: 1cm 0 1.5cm 1cm;
     }
 
     /* Define a orientação da página como paisagem */
@@ -44,9 +39,10 @@ tr {
     }
 
     /* Estilo para dividir o conteúdo em duas páginas, se necessário */
-    .pagina {
-        page-break-before: always;
+
+    .fim-da-pagina {
+        page-break-after: always;
     }
+
+
 }
-
-
