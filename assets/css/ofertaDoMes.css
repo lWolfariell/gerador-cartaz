@@ -1,0 +1,56 @@
+#corpoTabela {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+#corpoTabela li {
+    height: 222.44px;
+    width: 345.25px;
+    max-width: 345.25px;
+}
+
+.ofertaDoMes {
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+    text-transform: uppercase;
+    line-height: 2rem;
+}
+
+.NomeProd {
+    font-size: 25px;
+}
+
+.anterior {
+    font-size: 20px;
+}
+
+.alterado {
+    font-size: 40px;
+
+}
+
+@media print {
+
+    /* Define o tamanho da folha e a margem */
+    @page {
+        size: A4;
+        margin: 1cm 0 1.5cm 1cm;
+    }
+
+    /* Define a orientação da página como paisagem */
+    @page {
+        size: A4 landscape;
+    }
+
+    /* Estilo para dividir o conteúdo em duas páginas, se necessário */
+
+    .fim-da-pagina {
+        page-break-after: always;
+    }
+
+
+}
