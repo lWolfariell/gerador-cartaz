@@ -6,6 +6,10 @@
     grid-row-gap: 0px;
 }
 
+.ofertaDoMes {
+    display: none;
+}
+
 #corpoTabela li {
     height: 222.44px;
     width: 345.25px;
